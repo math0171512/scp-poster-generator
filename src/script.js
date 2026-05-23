@@ -48,7 +48,6 @@ function generatePoster() {
     scpnumber.style.textDecorationColor = colormap[objectimage]
 
     if (objectimage != "none") {
-        objectsafety.src = "images/"+objectimage
         objectsafety.style.display = "inline"
         
     } else {
@@ -76,6 +75,7 @@ function generatePoster() {
     const survivalinstructions = document.getElementById("survival-instructions")
     const survivalcontainer = document.getElementById("survivalul")
     let survivalarray = survivalinstructions.value
+
     if (survivalinstructions.value == "") {
         survivalarray = []
     } else {
@@ -93,9 +93,15 @@ function generatePoster() {
     }
 
     const customimage = document.getElementById("scpimageupload").files[0]
-    console.log(customimage)
-    if (customimage) {
+
+    const showimage = !(document.getElementById("imageavailable").checked)
+    
+    console.log(showimage)
+    
+    if (customimage && showimage) {
         document.getElementById("scpimage").src = URL.createObjectURL(customimage)
+    } else if (!showimage) {
+        document.getElementById("scpimage").src = "images/no-image.png"
     }
     const behaviourtext = document.getElementById("behaviour-text").value
     const propertiestext = document.getElementById("properties-text").value
