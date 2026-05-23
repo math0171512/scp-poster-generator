@@ -49,7 +49,7 @@ function generatePoster() {
 
     if (objectimage != "none") {
         objectsafety.style.display = "inline"
-        
+        objectsafety.src = "images/"+objectimage
     } else {
         objectsafety.style.display = "none"
     }
