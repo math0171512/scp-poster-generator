@@ -83,7 +83,7 @@
             <option value="emotional.png">Emotional</option>
             <option value="immortal.png">Immortal</option>
             <option value="regenerative.png">Regenerative</option>
-            <option value="intelligent.png">Intelligent</option>
+            <option value="intelligent-alt.png">Intelligent</option>
             <option value="strong.png">Strong</option>
     </template>
     <select name="Signs" id="ps1">
@@ -110,12 +110,16 @@ DO NOT LOOK AT ANY OF FORMS OF MEDIA SHOWING ITS REAL FACE DATA
     <br>
     <label for="survival-text">Survival text: </label>
     <input type="text" id="survival-text" placeholder="SURVIVAL">
+    <br>
+    <label for="survivaltextsize">Instructions text size:</label>
+    <input type="range" max="200" min="37" value="74" id="survivaltextsize"> <label id = "textsizedisplay" for="survivaltextsize">74% </label><button id="survivaltextsizereset">Reset</button>
     <br><br>
     <label for="objectsafety">Object Safety:</label>
     <select id="objectsafety">
         <option value="safe.png">Safe</option>
         <option value="euclid.webp">Euclid</option>
         <option value="keter.webp">Keter</option>
+        <option value="thaumiel.webp">Thaumiel</option>
         <option value="none">No image</option>
     </select>
     <br><br>
@@ -134,6 +138,8 @@ DO NOT LOOK AT ANY OF FORMS OF MEDIA SHOWING ITS REAL FACE DATA
     .tif,
     .tiff
     ">
+    <div id="paste-area">Or paste one here</div>
+    <img id="test-preview">
     <br>
     <label for="imageavailable">Show no image</label>
     <input type="checkbox" id="imageavailable" checked="false">

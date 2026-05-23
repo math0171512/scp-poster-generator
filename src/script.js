@@ -27,10 +27,13 @@ document.getElementById(propertiesinputs[1]).value = "hyperfast.png"
 
 document.getElementById("objectsafety").value = "euclid.webp"
 
+let customimagedata = null
+
 const colormap = {
     "safe.png": "#4aa800",
     "euclid.webp": "#fc6600",
     "keter.webp": "#ed0000",
+    "thaumiel.webp": "#91009e",
     "none": "#ffffffff"
 }
 
@@ -89,17 +92,16 @@ function generatePoster() {
     for (let i=0;i<survivalarray.length;i++) {
         const clone = stemp.content.cloneNode(true);
         clone.querySelector(".survivalli").textContent = survivalarray[i]
+        clone.querySelector(".survivalli").style.fontSize = document.getElementById("survivaltextsize").value+"%"
         survivalcontainer.appendChild(clone);
     }
-
-    const customimage = document.getElementById("scpimageupload").files[0]
 
     const showimage = !(document.getElementById("imageavailable").checked)
     
     console.log(showimage)
     
-    if (customimage && showimage) {
-        document.getElementById("scpimage").src = URL.createObjectURL(customimage)
+    if (customimagedata && showimage) {
+        document.getElementById("scpimage").src = customimagedata
     } else if (!showimage) {
         document.getElementById("scpimage").src = "images/no-image.png"
     }
@@ -162,6 +164,44 @@ copy.onclick = async function() {
         console.log("cant copy")
     }
 }
+
+const pasteimage = document.getElementById("paste-area")
+pasteimage.addEventListener("paste",async (event) => {
+    const img = event.clipboardData.items[0]
+    console.log(img.type)
+    if (img.type.startsWith("image/") | img.type=="text/html") {
+
+        if (img.type=="text/html") {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(event.clipboardData.getData("text/html"), "text/html");
+
+            const img = doc.querySelector("img");
+
+            if (img?.src) {
+                customimagedata = img.src
+            }
+        } else {
+            customimagedata = URL.createObjectURL(img.getAsFile())
+        }
+    }
+})
+
+document.getElementById("scpimageupload").addEventListener("change", (event) => {
+    const files = event.target.files
+    if (files.length > 0) {
+        customimagedata = URL.createObjectURL(files[0])
+    }
+})
+
+document.getElementById("survivaltextsize").addEventListener("input", (event) => {
+    document.getElementById("textsizedisplay").textContent = event.target.value+"%"
+})
+
+document.getElementById("survivaltextsizereset").onclick = (event) => {
+    document.getElementById("survivaltextsize").value = 74
+    document.getElementById("textsizedisplay").textContent = "74%"
+}
+
 generate.onclick = generatePoster
 
 generatePoster()
