@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>the cool title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Output</h1>
+    <div class="root" id="rootscp">
+        <div class="safetyoverlay">
+            <div class="darkener"></div>
+            <h1 class="scpname"><br><u id = "scpnumber" class="name-underline">173</u></h1>
+
+            <img src="images/no-image.png" class="scpimage" id="scpimage">
+            <img src="images/euclid.webp" class="safetysign" id="objectsafetyimage">
+        </div>
+        <div class="info">
+            <div class="bio infosection">
+                <h1 class="infotitle biotitle"><u id="behaviour-text-output">BEHAVIOUR</u></h1>
+                <div class="bioseperator">
+                    <img src="images/lethal.png" class="biosign" id="bds1">
+                    <img src="images/violent.png" class="biosign" id="bds2">
+                    <img src="images/easilyprovokable.png" class="biosign" id="bds3">
+                    
+                </div>
+            </div>
+            <div class="properties infosection">
+                <h1 class="infotitle"><u id="properties-text-output">PROPERTIES</u></h1>
+                <div class="bioseperator">
+                    <img src="images/durable.png" class="biosign" id="pds1">
+                    <img src="images/hyperfast.png" class="biosign" id="pds2">
+                    <img src="images/hyperfast.png" class="biosign" id="pds3">
+                </div>
+            </div>
+            <div class="survival infosection">
+                <h1 class="infotitle survivaltitle"><u id="survival-text-output">SURVIVAL</u></h1>
+                <template id="survival-instruction">
+                    <li class="survivalli">DO NOT BREAK LINE OF SIGHT</li>
+                </template>
+                <ul class="survivalul" id="survivalul">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="none" id="download-button" download="output.png">Export to disk</a>
+    <button id="copy-button">Export to clipboard</button>
+    <h1>Customization</h1>
+    <label for="bs1">Behaviour signs:</label>
+    <template id="BehaviourSigns">
+            <option value="none">No image</option>
+            <option value="lethal.png">Lethal</option>
+            <option value="violent.png">Violent</option>
+            <option value="easilyprovokable.png">Easily Provokable</option>
+            <option value="helpful.png">Helpful</option>
+    </template>
+    <select name="Signs" id="bs1">
+        
+    </select>
+    <select name="Signs" id="bs2">
+        
+    </select>
+    <select name="Signs" id="bs3">
+        
+    </select>
+    <br>
+    <label for="behaviour-text">Behaviour text:</label>
+    <input type="text" id="behaviour-text" placeholder="BEHAVIOUR">
+    <br><br>
+
+    <label for="bs1">Properties signs:</label>
+    <template id="PropertiesSigns">
+            <option value="none">No image</option>
+            <option value="durable.png">Durable</option>
+            <option value="hyperfast.png">Hyperfast</option>
+            <option value="teleportation.png">Teleportation</option>
+            <option value="slow.png">Slow</option>
+            <option value="soft.png">Soft</option>
+            <option value="emotional.png">Emotional</option>
+    </template>
+    <select name="Signs" id="ps1">
+        
+    </select>
+    <select name="Signs" id="ps2">
+        
+    </select>
+    <select name="Signs" id="ps3">
+        
+    </select>
+    <br>
+    <label for="properties-text">Properties text:</label>
+    <input type="text" id="properties-text" placeholder="PROPERTIES">
+
+    <br><br>
+    <label>Survival instructions (seperate with a new line)</label>
+    <br>
+    <textarea id="survival-instructions">
+DO NOT LOOK AT ITS FACE
+PUT A BAG OVER ITS FACE INCASE OF BREACH
+DO NOT LOOK AT ANY OF FORMS OF MEDIA SHOWING ITS REAL FACE DATA
+    </textarea>
+    <br>
+    <label for="survival-text">Survival text: </label>
+    <input type="text" id="survival-text" placeholder="SURVIVAL">
+    <br><br>
+    <label for="objectsafety">Object Safety:</label>
+    <select id="objectsafety">
+        <option value="safe.png">Safe</option>
+        <option value="euclid.webp">Euclid</option>
+        <option value="keter.webp">Keter</option>
+        <option value="none">No image</option>
+    </select>
+    <br><br>
+    <label for="scpimageupload">SCP Image:</label>
+    <input type="file" id="scpimageupload" accept="
+    .image,
+    .png,
+    .jpg,
+    .jpeg,
+    .webp,
+    .gif,
+    .svg,
+    .bmp,
+    .ico,
+    .avif,
+    .tif,
+    .tiff
+    ">
+    <br>
+    <label for="imageavailable">Show no image</label>
+    <input type="checkbox" id="imageavailable" checked="false">
+    <br>
+    <label for="scpnumberinput">Number:</label>
+    <input type="text" id="scpnumberinput" maxlength="4" value="096">
+    <br><br>
+    <button id="generate">Generate Poster</button>
+
+    <footer>Produced images are in public domain, no credit is required. If you wish, you may credit 'math0171512' (My GitHub handle)</footer>
+
+    <script src="https://unpkg.com/html-to-image@1.11.13/dist/html-to-image.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
