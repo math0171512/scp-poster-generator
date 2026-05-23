@@ -18,4 +18,4 @@ Currently, the website has very little information signs. If you are an artist, 
 
 You can also make an issue and suggest new signs there as well.
 
-The repository features a `template.xcf` file which you may download and open with Gimp to have a slightly easier time. If you are using different software, you are perfectly allowed to copy any of the other `.png` images too.
+The repository features a `template.xcf` file which you may download and open with GIMP to have a slightly easier time. If you are using different software, you are perfectly allowed to copy any of the other `.png` images too.
