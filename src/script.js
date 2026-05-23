@@ -93,9 +93,11 @@ function generatePoster() {
     }
 
     const customimage = document.getElementById("scpimageupload").files[0]
-    console.log(customimage)
-    if (customimage) {
+    const showimage = !document.getElementById("imageavailable").checked
+    if (customimage && showimage) {
         document.getElementById("scpimage").src = URL.createObjectURL(customimage)
+    } else if (!showimage) {
+        document.getElementById("scpimage").src = "images/no-image.png"
     }
     const behaviourtext = document.getElementById("behaviour-text").value
     const propertiestext = document.getElementById("properties-text").value
