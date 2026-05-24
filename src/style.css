@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "monospaced-font";
+    src: url("fonts/sourcecodepro.ttf")
+}
+
 .root {
     border-color: black;
     border-width: 3px;
@@ -141,7 +146,7 @@
     display: block;
     color: #4aa800;
     z-index: 2;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "monospaced-font";
 }
 
 .name-underline {
