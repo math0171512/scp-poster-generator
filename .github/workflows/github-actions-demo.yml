@@ -7,7 +7,7 @@ jobs:
     steps:
         - run: |
             git clone https://github.com/math0171512/scp-poster-generator.git files
-            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/math0171512/math0171512.github.io.git target
+            git clone https://github.com/math0171512/math0171512.github.io target
 
             echo "Cloned both repos"
 
@@ -22,6 +22,11 @@ jobs:
             git add .
 
             echo "Added files"
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+            echo "Added authentication"
 
             git commit -m "update" || echo nothing to commit
 
