@@ -7,7 +7,7 @@ jobs:
     steps:
         - run: |
             git clone https://github.com/math0171512/scp-poster-generator.git files
-            git clone https://github.com/math0171512/math0171512.github.io target
+            git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/math0171512/math0171512.github.io.git target
 
             echo "Cloned both repos"
 
