@@ -13,7 +13,7 @@ jobs:
             git clone https://github.com/math0171512/scp-poster-generator.git files
             git clone https://x-access-token:${{ secrets.PAT }}@github.com/math0171512/math0171512.github.io.git target
 
-            echo "Cloned both repos."
+            echo "Cloned both repos"
 
             cd target
             find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
