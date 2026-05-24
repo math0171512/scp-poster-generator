@@ -1,6 +1,10 @@
 name: learn-github-actions
 run-name: "Pushing to website"
 on: [push]
+
+permissions:
+  contents: write
+
 jobs:
   push-to-website:
     runs-on: ubuntu-latest
