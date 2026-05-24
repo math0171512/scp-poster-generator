@@ -2,17 +2,31 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  push-to-website:
     runs-on: ubuntu-latest
     steps:
         - run: |
             git clone https://github.com/math0171512/scp-poster-generator.git files
             git clone https://github.com/math0171512/math0171512.github.io target
+
+            echo "Cloned both repos"
+
             cd target
             find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
             shopt -s dotglob
             cp -r ../files/src/. .
             cp ../files/LICENSE .
+
+            echo "Replaced files"
+
             git add .
+
+            echo "Added files"
+
             git commit -m "update" || echo nothing to commit
+
+            echo "Commited"
+
             git push --force
+
+            echo "yup all works great job team"
