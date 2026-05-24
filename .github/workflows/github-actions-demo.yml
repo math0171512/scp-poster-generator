@@ -23,14 +23,14 @@ jobs:
 
             echo "Replaced files"
 
-            git add .
-
-            echo "Added files"
-
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
             echo "Added authentication"
+
+            git add .
+
+            echo "Added files"
 
             git commit -m "update" || echo nothing to commit
 
